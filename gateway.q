@@ -1,8 +1,4 @@
-args:.Q.def[`name`port!("gateway";8888);].Q.opt .z.x
-
-/ remove this line when using in production
-/ gateway:localhost:8888::
-{ if[not x=0; @[x;"\\\\";()]]; value"\\p 8888"; } @[hopen;`:localhost:8888;0];
+if[not system"p"; system"p 8888"];
 
 NLB: neg LB: hopen 8080;
 

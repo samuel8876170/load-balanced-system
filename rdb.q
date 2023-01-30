@@ -1,5 +1,4 @@
-if[not system"p"; system"p 5000"];
-if[not system"t"; system"t 60000"];
+if[not system"p"; system"p 5001"];
 
 n: 20;
 sym: `IBM`FD`NVDA`INTC;
@@ -11,4 +10,3 @@ quote:([]time:n?.z.N; sym:n?sym; ex:n?ex; bid:n?1000f; ask:n?1000f; bsize:n?50; 
 queryNum: 0;
 .z.pg: { queryNum::queryNum+1; value x };
 .z.ps: { queryNum::queryNum+1; value x };
-.z.ts: { queryNum::0; };

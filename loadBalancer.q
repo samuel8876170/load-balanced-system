@@ -1,10 +1,6 @@
-args:.Q.def[`name`port!("loadBalancer";8080);].Q.opt .z.x
+if[not system"p"; system"p 8080"];
 
-/ remove this line when using in production
-/ loadBalancer:localhost:8080::
-{ if[not x=0; @[x;"\\\\";()]]; value"\\p 8080"; } @[hopen;`:localhost:8080;0];
-
-services: ([address:`:localhost:5000`:localhost:5001] name:`rdb`rdb; avail:11b);
+services: ([address:`symbol$()] name:`symbol$(); avail:`boolean$());
 
 requestQueue: ()!();
 addRequest: {[h;qid;serv] requestQueue[serv]::requestQueue[serv],enlist(h;qid); };
